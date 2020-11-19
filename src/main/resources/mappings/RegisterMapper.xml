@@ -33,6 +33,10 @@
     from register
     where ID = #{id,jdbcType=INTEGER}
   </select>
+<!--  查询最大病历号-->
+  <select id="getMaxCaseNumber" resultType="String">
+    select max(CaseNumber) from register
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="Integer">
     delete from register
     where ID = #{id,jdbcType=INTEGER}

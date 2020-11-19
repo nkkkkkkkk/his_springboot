@@ -1,8 +1,13 @@
 package com.edu.mapper;
 
 import com.edu.javaBean.Register;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface RegisterMapper {
+    //获取最大病历号
+    String getMaxCaseNumber();
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Register record);

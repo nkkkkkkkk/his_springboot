@@ -16,6 +16,11 @@
   <sql id="Base_Column_List">
     ID, InvoiceNum, Money, State, CreationTime, UserID, RegistID, FeeType, Back, DailyState
   </sql>
+<!--  查询最大发票号-->
+  <select id="getMaxInvoiceNum" resultType="String">
+    select max(InvoiceNum) from invoice
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
